@@ -540,8 +540,8 @@ def generate_accounts():
     # Validate and convert count
     try:
         count = int(count)
-        if count > 15:
-            count = 15
+        if count > 1000:
+            count = 1000
         if count < 1:
             count = 1
     except:
@@ -555,7 +555,7 @@ def generate_accounts():
     print(f"Starting creation of {count} FULL LOGIN accounts for region {region} with name prefix {name}")
     
     # Use thread pool with limited workers
-    max_workers = 5  # Reduced for stability
+    max_workers = 100  # Reduced for stability
     
     # Create accounts with retry mechanism until we get exactly the requested count of FULL LOGIN accounts
     results = []
